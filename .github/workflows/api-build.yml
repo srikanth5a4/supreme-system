@@ -1,0 +1,19 @@
+name: api-build 
+
+on: 
+    push: #this workflow is triggered on push event 
+        paths: # this paths is limiting to specific file path in this case when a new change is made to api-build.yml file and second path is any of the files inside the api directory 
+            - ".github/workflows/api-build.yml"
+            - "api/**"
+    workflow_dispatch: #manual 
+
+jobs:
+    build:
+        name: build-dotnet-api 
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - run: dotnet --list-runtimes
+            - run: dotnet --list-sdks
+            - run: dotnet build 
+              working-directory: ./api
