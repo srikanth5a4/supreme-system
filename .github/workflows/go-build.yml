@@ -10,7 +10,7 @@ on:
 jobs:
     build:
         name: go build
-        runs-on: self-hosted
+        runs-on: ubuntu-latest
         steps:
          - run: pwd && ls -al 
            name: printing current working directory along with list of contents before checking out code
