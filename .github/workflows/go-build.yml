@@ -10,7 +10,7 @@ on:
 jobs:
     build:
         name: go build
-        runs-on: macos-latest
+        runs-on: self-hosted
         steps:
          - run: pwd && ls -al 
            name: printing current working directory along with list of contents before checking out code
