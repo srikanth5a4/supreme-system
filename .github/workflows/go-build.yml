@@ -25,7 +25,9 @@ jobs:
             go-version-file: ./upper/go.mod
             cache-dependency-path: ./upper/go.sum
            name: setup and installation for go version from go.sum dependecy package file 
-         - run: go version 
+         - run: go mod download
+           working-directory: upper
+           name: downloading go modules listed in go.mod local file into local cache and validates them against go.sum   
          - run: | 
             ls 
             go build 
