@@ -23,7 +23,7 @@ jobs:
            with:
             # go-version: '1.22'
             go-version-file: ./upper/go.mod
-            cache-dependecy-path: ./upper/go.sum
+            cache-dependency-path: ./upper/go.sum
            name: setup and installation for go version from go.sum dependecy package file 
          - run: go version 
          - run: | 
